@@ -13,10 +13,10 @@ export default function Film() {
         {Films.map((film) => (
           <Col s={4} key={film.id}>
             <Card
-              header={<CardTitle image={film.imgage} reveal waves="light" />}
+              header={<CardTitle image={film.image} reveal waves="light" />}
               reveal={<p>{film.info}</p>}
               revealIcon={<Icon>more_vert</Icon>}
-              title={film.name}
+              title={film.title}
             >
               <Link to={`detail/${film.id}`}>
                 <p>

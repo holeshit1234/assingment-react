@@ -2,6 +2,8 @@ import React from 'react'
 import './Navigation.css'
 import { useContext } from 'react'
 import { ThemeContext } from '../themcolor/ThemeContext'
+import { Link } from 'react-router-dom'
+import { NavItem,Navbar,Icon } from 'react-materialize'
 //export default class Navigation extends Component {
 export default function Navigation() {
     //render(){
@@ -14,16 +16,16 @@ export default function Navigation() {
                     color: theme.color,
                     outline: 'none'
                 }}>
-                    <li ><a className='active' href='#home' style={{ color: theme.color }}>Home</a></li>
-                    <li ><a href='#new' style={{ color: theme.color }}>News</a></li>
-                    <li ><a href='#about' style={{ color: theme.color }}>About</a></li>
-                    <li ><a href='#contact' style={{ color: theme.color }}>Contact</a></li>
+                    <li ><a className='active' href='/' style={{ color: theme.color }}><Icon left>home</Icon>Home</a></li>
+                    <li ><Link to='/news/user' style={{ color: theme.color }}><Icon left>fiber_new</Icon>News</Link></li>
+                    <li ><Link to='/about/user' style={{ color: theme.color }}><Icon left>info_outline</Icon>About</Link></li>
+                    <li ><Link to='/contract/user' style={{ color: theme.color }}><Icon left>contacts</Icon>Contact</Link></li>
                     <li style={{ position: 'relative', float: 'right' }}>
                         <a className='switch-mode' href='#mode' onClick={toggle}
                             style={{ color: theme.color }}
                             data-testid="toggle-theme-btn"
                         >
-                            Switch Nav to {!dark ? 'Dark' : 'Light'} mode
+                             {!dark ? <Icon>brightness_1</Icon> : <Icon>brightness_2</Icon>} 
                         </a>
                     </li>
                 </ul>
